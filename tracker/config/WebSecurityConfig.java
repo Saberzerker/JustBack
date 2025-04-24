@@ -1,41 +1,34 @@
-package com.fitness.tracker.config;
+// package com.fitness.tracker.config;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+// import org.springframework.context.annotation.Bean;
+// import org.springframework.context.annotation.Configuration;
+// import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+// import org.springframework.security.web.SecurityFilterChain;
 
-import java.util.Arrays;
+// @Configuration
+// public class WebSecurityConfig {
 
-@Configuration
-@EnableWebSecurity
-public class WebSecurityConfig {
+//     @Bean
+//     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+//         // Configure CORS
+//         http.cors(cors -> cors.configurationSource(request -> {
+//             var corsConfig = new org.springframework.web.cors.CorsConfiguration();
+//             corsConfig.addAllowedOrigin("http://localhost:8000"); // Frontend URL
+//             corsConfig.addAllowedMethod("*"); // Allow all HTTP methods
+//             corsConfig.addAllowedHeader("*"); // Allow all headers
+//             corsConfig.setAllowCredentials(true); // Allow credentials (e.g., cookies, authorization headers)
+//             return corsConfig;
+//         }));
 
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
-            .cors().and()
-            .csrf().disable()
-            .authorizeHttpRequests()
-            .anyRequest().permitAll();
-        
-        return http.build();
-    }
+//         // Disable CSRF for simplicity (consider enabling it in production with proper configuration)
+//         http.csrf(csrf -> csrf.disable());
 
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
-        configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
-        configuration.setAllowedHeaders(Arrays.asList("*"));
-        configuration.setAllowCredentials(true);
-        
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
-    }
-}
+//         // Configure Authorization
+//         http.authorizeHttpRequests(auth -> auth
+//                 .requestMatchers("/api/**").permitAll() // Allow unrestricted access to all API endpoints
+//                 .anyRequest().authenticated() // All other requests require authentication
+//         );
+
+//         return http.build();
+//     }
+// }   
