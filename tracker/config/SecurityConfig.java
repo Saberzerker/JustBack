@@ -20,13 +20,12 @@ public class SecurityConfig {
             return corsConfig;
         }));
 
-        // Configure CSRF
+        // Disable CSRF
         http.csrf(csrf -> csrf.disable());
 
-        // Configure Authorization
+        // Allow all requests without requiring authentication
         http.authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/**").permitAll()
-                .anyRequest().authenticated()
+                .anyRequest().permitAll()
         );
 
         return http.build();

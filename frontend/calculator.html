@@ -4,24 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styles.css">
-  <title>Calorie Calculator</title>
+  <title>BMI & Calorie Calculator</title>
 </head>
 <body>
   <div class="container">
-    <h1>Calorie Calculator</h1>
-    <form id="calorieForm">
-      <select id="activityType" required>
-        <option value="" disabled selected>Select Activity</option>
-        <option value="RunningCalorieCalculator">Running</option>
-        <option value="CyclingCalorieCalculator">Cycling</option>
-        <option value="WalkingCalorieCalculator">Walking</option>
-      </select>
+    <h1>BMI & Calorie Calculator</h1>
+    <form id="bmiCalorieForm">
+      <input type="number" id="height" placeholder="Height (cm)" required>
       <input type="number" id="weight" placeholder="Weight (kg)" required>
-      <input type="number" id="duration" placeholder="Duration (minutes)" required>
-      <button type="submit">Calculate</button>
+      <input type="number" id="age" placeholder="Age" required>
+      <select id="activityLevel" required>
+        <option value="" disabled selected>Activity Level</option>
+        <option value="sedentary">Sedentary</option>
+        <option value="light">Light Activity</option>
+        <option value="moderate">Moderate Activity</option>
+        <option value="active">Active</option>
+      </select>
+      <button type="submit" class="btn">Calculate</button>
     </form>
     <div id="result"></div>
   </div>
-  <script src="js/calculator.js"></script>
+  <script>
+    document.getElementById('bmiCalorieForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const height = parseFloat(document.getElementById('height').value) / 100;
+      const weight = parseFloat(document.getElementById('weight').value);
+      const age = parseInt(document.getElementById('age').value);
+      const bmi = (weight / (height * height)).toFixed(2);
+      document.getElementById('result').innerText = `Your BMI is ${bmi}`;
+    });
+  </script>
 </body>
 </html>

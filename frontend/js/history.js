@@ -15,4 +15,4 @@ document.addEventListener('DOMContentLoaded', async function () {
       console.error('Error fetching history:', error);
       alert('Failed to load exercise history.');
     }
-  });
+});
