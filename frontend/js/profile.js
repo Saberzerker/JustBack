@@ -42,4 +42,4 @@ document.addEventListener('DOMContentLoaded', async function () {
         alert('An error occurred while updating your profile.');
       }
     });
-  });
+});

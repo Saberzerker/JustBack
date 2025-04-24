@@ -1,40 +1,129 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-  }
-  
-  .container {
+    color: #333;
+}
+
+.container {
     max-width: 500px;
     margin: 50px auto;
     padding: 20px;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
+}
+
+/* Typography */
+h1 {
     text-align: center;
     color: #333;
-  }
-  
-  form input,
-  form button {
+}
+
+/* Form Styles */
+form input,
+form button,
+form select {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 4px;
-  }
-  
-  form button {
+}
+
+form button {
     background-color: #007bff;
     color: white;
     border: none;
     cursor: pointer;
-  }
-  
-  form button:hover {
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
     background-color: #0056b3;
-  }
+}
+
+/* Links */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Animations */
+.animated-title {
+    font-size: 2em;
+    text-align: center;
+    color: #444;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #007bff, 0 0 10px #007bff;
+    }
+    to {
+        text-shadow: 0 0 20px #0056b3, 0 0 30px #0056b3;
+    }
+}
+
+/* Result Box */
+.result-box {
+    background-color: #e9f7ff;
+    border: 1px solid #cde9ff;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Input Group */
+.input-group {
+    position: relative;
+}
+
+.input-group .input-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    color: #888;
+}
+
+/* Buttons */
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Outline Button */
+.btn-outline {
+    background-color: transparent;
+    color: #007bff;
+    border: 2px solid #007bff;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: #007bff;
+    color: #fff;
+}

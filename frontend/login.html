@@ -10,14 +10,19 @@
     <div class="container">
         <h1 class="page-title">Log In</h1>
         <form id="loginForm">
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="password" placeholder="Password" required>
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Email" required>
+                <span class="input-icon">📧</span>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" required>
+                <span class="input-icon">🔒</span>
+            </div>
             <button type="submit" class="btn">Log In</button>
         </form>
         <p class="link-text">
             Don’t have an account? <a href="register.html">Register here</a>
         </p>
     </div>
-    <script src="js/auth.js"></script>
 </body>
 </html>
