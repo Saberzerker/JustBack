@@ -1,12 +1,12 @@
 package com.fitness.tracker.dto;
 
 public class UserDTO {
-    private Long id;
-    private String username;
-    private String email;
-    private int age;
-    private double weight;
-    private double height;
+    private final Long id;
+    private final String username;
+    private final String email;
+    private final int age;
+    private final double weight;
+    private final double height;
 
     // Constructor
     public UserDTO(Long id, String username, String email, int age, double weight, double height) {
@@ -41,30 +41,5 @@ public class UserDTO {
 
     public double getHeight() {
         return height;
-    }
-
-    // Setters
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
     }
 }
